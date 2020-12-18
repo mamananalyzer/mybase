@@ -14,7 +14,8 @@ class AccountsController extends Controller
      */
     public function index()
     {
-        return view('accounts/index');
+        $account = DB::table('account')->get();
+        return view('accounts/index', ['account']);
     }
 
     /**

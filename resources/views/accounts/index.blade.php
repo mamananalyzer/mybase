@@ -37,6 +37,7 @@
             <th scope="col">Password</th>
             <th scope="col">Sites</th>
             <th scope="col">Addition Info</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +47,10 @@
             <td>Otto</td>
             <td>@mdo</td>
             <td>@mdo</td>
+            <td>
+                <a href="{{ '/edit' }}" class="btn btn-success">edit</a>
+                <a href="{{ '/delete' }}" class="btn btn-danger">delete</a>
+            </td>
           </tr>
           <tr>
             <th scope="row">2</th>
@@ -53,6 +58,10 @@
             <td>Thornton</td>
             <td>@fat</td>
             <td>@fat</td>
+            <td>
+                <a href="{{ '/edit' }}" class="btn btn-success">edit</a>
+                <a href="{{ '/delete' }}" class="btn btn-danger">delete</a>
+            </td>          
           </tr>
           <tr>
             <th scope="row">3</th>
@@ -60,6 +69,10 @@
             <td>the Bird</td>
             <td>@twitter</td>
             <td>@twitter</td>
+            <td>
+                <a href="{{ '/edit' }}" class="btn btn-success">edit</a>
+                <a href="{{ '/delete' }}" class="btn btn-danger">delete</a>
+            </td>
           </tr>
         </tbody>
     </table>
