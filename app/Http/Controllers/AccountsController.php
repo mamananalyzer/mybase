@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Accounts;
+use App\Account;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AccountsController extends Controller
@@ -14,8 +15,9 @@ class AccountsController extends Controller
      */
     public function index()
     {
-        $account = DB::table('account')->get();
-        return view('accounts/index', ['account']);
+        // $account = DB::table('accounts')->get();
+        $account = Account::all();
+        return view('accounts/index', ['account' => $account]);
     }
 
     /**
@@ -54,9 +56,9 @@ class AccountsController extends Controller
         // }
 
 
-        Accounts::create($formInput);
+        Account::create($formInput);
 
-        return redirect('/home')->with('status',
+        return redirect('/accounts')->with('status',
         'Terima kasih sudah menginput data, data berhasil ditambahkan!');
     }
 

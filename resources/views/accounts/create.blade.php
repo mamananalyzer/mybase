@@ -7,8 +7,8 @@
         <form class="py-3" enctype="multipart/form-data" action="{{ url('/accounts') }}" method="POST">
         {{ csrf_field() }}
             <div class="form-group">
-              <label for="exampleFormControlInput1">Email or Username</label>
-              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <label for="name">Email or Username</label>
+              <input type="name" name="email" class="form-control" id="name" placeholder="name@example.com">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="number" name="phonenumber" class="form-control" id="phone" placeholder="+62 812 9449 8448">
+              <input type="phonenumber" name="phonenumber" class="form-control" id="phone" placeholder="+62 812 9449 8448">
             </div>
             <div class="form-group">
               <label for="text">Additional Information</label>

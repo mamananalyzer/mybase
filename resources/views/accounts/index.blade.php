@@ -36,56 +36,31 @@
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Sites</th>
+            <th scope="col">Phone Number</th>
             <th scope="col">Addition Info</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>
-                <a href="{{ '/edit' }}" class="btn btn-success">edit</a>
-                <a href="{{ '/delete' }}" class="btn btn-danger">delete</a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>
-                <a href="{{ '/edit' }}" class="btn btn-success">edit</a>
-                <a href="{{ '/delete' }}" class="btn btn-danger">delete</a>
-            </td>          
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>@twitter</td>
-            <td>
-                <a href="{{ '/edit' }}" class="btn btn-success">edit</a>
-                <a href="{{ '/delete' }}" class="btn btn-danger">delete</a>
-            </td>
-          </tr>
+            @foreach ($account as $acc)
+            <tr>
+              <th scope="row">{{ $acc->id }}</th>
+              <td>{{ $acc->email }}</td>
+              <td>{{ $acc->password }}</td>
+              <td>{{ $acc->sites }}</td>
+              <td>{{ $acc->phonenumber }}</td>
+              <td>{{ $acc->info }}</td>
+              <td>
+                <a href="{{ $acc->id }}/edit" class="btn btn-success"><i class="fa fa-edit"></i> Edit</a>
+                <form action="{{url('/accounts')}}/{{ $acc->id }}" method="post" class="d-inline">
+                    @method('delete')
+                    {{ csrf_field() }}
+                    <button type="submit" onclick="return confirm('Are you sure delete this account ?')" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                </form>
+              </td>
+            </tr>
+                
+            @endforeach
         </tbody>
     </table>
-
-    {{-- @if(auth()->user()->role == 'admin') --}}
-        {{-- <ul class="list-group mb-4">
-            @foreach ($products as $product)
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                {{ $product -> type }}
-            <a href="products/{{ $product->id }}" class="badge badge-info">Read more ...</a>
-            </li>
-            @endforeach
-        </ul> --}}
-    {{-- @endif --}}
-
 @endsection

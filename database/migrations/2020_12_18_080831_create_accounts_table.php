@@ -18,6 +18,7 @@ class CreateAccountsTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('sites');
+            $table->string('phonenumber');
             $table->string('info');
             $table->timestamps();
         });
