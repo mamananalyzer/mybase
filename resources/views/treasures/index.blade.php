@@ -16,21 +16,7 @@
                 <button type="button" class="btn btn-sm btn-dark my-1">dark</button>
                 <button type="button" class="btn btn-sm btn-dark my-1">dark</button>
             </div>
-            <div class="col">
-                <button type="button" class="btn btn-sm btn-dark">dark</button>
-                <button type="button" class="btn btn-sm btn-dark">dark</button>
-            </div>
         </div>
-        {{-- <div class="row mx-4 my-3">
-            <div class="col">
-                <button type="button" class="btn btn-sm btn-dark">dark</button>
-                <button type="button" class="btn btn-sm btn-dark">dark</button>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-sm btn-dark">dark</button>
-                <button type="button" class="btn btn-sm btn-dark">dark</button>
-            </div>
-        </div> --}}
     </div>
 
     {{-- display list account --}}
@@ -47,7 +33,7 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($account as $acc)
+            {{-- @foreach ($account as $acc)
             <tr>
               <th scope="row">{{ $acc->id }}</th>
               <td>{{ $acc->email }}</td>
@@ -65,7 +51,7 @@
               </td>
             </tr>
                 
-            @endforeach
+            @endforeach --}}
         </tbody>
     </table>
 @endsection

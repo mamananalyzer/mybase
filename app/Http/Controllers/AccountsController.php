@@ -79,9 +79,10 @@ class AccountsController extends Controller
      * @param  \App\Accounts  $accounts
      * @return \Illuminate\Http\Response
      */
-    public function edit(Accounts $accounts)
+    public function edit(Account $account)
     {
-        //
+        return view('accounts/edit')
+        ->with(compact('account'));
     }
 
     /**
@@ -91,9 +92,22 @@ class AccountsController extends Controller
      * @param  \App\Accounts  $accounts
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Accounts $accounts)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+            'sites' => 'required'
+        ]);
+        // dd($request->all());
+        $account = Account::find($id);
+        $account->update($request->all());
+        // if($request->hasFile('picture')){
+        //     $request->file('picture')->move('images/',$request->file('picture')->getClientOriginalName());
+        //     $account->picture = $request->file('picture')->getClientOriginalName();
+        //     $account->save();
+        // }
+        return redirect('/accounts');
     }
 
     /**
@@ -102,8 +116,9 @@ class AccountsController extends Controller
      * @param  \App\Accounts  $accounts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Accounts $accounts)
+    public function destroy(Account $account)
     {
-        //
+        Account::destroy($account->id);
+        return redirect('/accounts');
     }
 }

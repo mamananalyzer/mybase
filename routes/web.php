@@ -21,11 +21,22 @@ Route::get('/', function () {
 // accounts
 Route::get('/accounts', 'AccountsController@index');
 Route::get('/accounts/create', 'AccountsController@create');
-Route::get('/accounts/{product}', 'AccountsController@show');
+// Route::get('/accounts/{product}', 'AccountsController@show');
 Route::post('/accounts', 'AccountsController@store');
-Route::delete('/accounts/{product}', 'AccountsController@destroy');
-Route::get('/accounts/{product}/edit', 'AccountsController@edit');
-Route::patch('/accounts/{product}', 'AccountsController@update');
+Route::delete('/accounts/{account}', 'AccountsController@destroy');
+Route::get('/accounts/{account}/edit', 'AccountsController@edit');
+Route::patch('/accounts/{account}', 'AccountsController@update');
+
+// treasures
+Route::get('/treasures', 'TreasuresController@index');
+Route::get('/accounts/create', 'AccountsController@create');
+// Route::get('/accounts/{product}', 'AccountsController@show');
+Route::post('/accounts', 'AccountsController@store');
+Route::delete('/accounts/{account}', 'AccountsController@destroy');
+Route::get('/accounts/{account}/edit', 'AccountsController@edit');
+Route::patch('/accounts/{account}', 'AccountsController@update');
+
+
 
 
 
