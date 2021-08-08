@@ -4,6 +4,6 @@
 
 @section('container')
     <div class="container">
-        
+
     </div>
 @endsection

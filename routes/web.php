@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/test', function () {
+    return view('test/index');
+});
+
 // accounts
 Route::get('/accounts', 'AccountsController@index');
 Route::get('/accounts/create', 'AccountsController@create');
